@@ -1,0 +1,18 @@
+{
+  "system_only": true,
+  "dependencies": {
+    "system": {
+      "Arch_method": "sudo pacman -S --noconfirm",
+      "check_commands": [
+        "node",
+        "npm"
+      ],
+      "Arch": {
+        "node": "nodejs",
+        "npm": "npm",
+      },
+    "gitpm": [
+      "https://github.com/FyreX-opensource-design/Depender,Nathan22211-gitpm-test,depender"
+    ]
+  }
+}
