@@ -1,0 +1,14 @@
+{
+  "system_only": false,
+  "dependencies": {
+    "system": {
+      "method": "sudo pacman -S --noconfirm",
+      "check_commands": [
+        "python3"
+      ],
+      "Arch": {
+        "python3": "python3"
+      }
+  }
+}
+}
