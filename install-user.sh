@@ -4,3 +4,4 @@ cd ~/.local/share/apps/nativefier/
 npm install ~/.local/share/apps/nativefier/nativefier-57.0.0.tgz
 cd $CURRENT_DIR
 ln -s ~/.local/share/apps/nativefier/nativefier-user.sh ~/.local/bin/nativefier
+chmod +x ~/.local/share/apps/nativefier/nativefier-user.sh
