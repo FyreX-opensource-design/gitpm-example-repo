@@ -139,21 +139,22 @@ fi
 if [ "$SYSTEM" = "system" ]; then
     SYSTEM_FLAG="--system"
     PWA_DIR="/opt/PWA"
-    DLI_E="/opt/PWA/$NAME/APP"
-    cd /opt/PWA
+    DLI_E="/opt/PWA/$NAME-linux-x64/APP"
 else
     SYSTEM_FLAG=""
     PWA_DIR="$HOME/.local/share/PWA"
-    DLI_E="$HOME/.local/share/PWA/$NAME/APP"
-    cd "$HOME/.local/share/PWA/"
+    DLI_E="$HOME/.local/share/PWA/$NAME-linux-x64/APP"
 fi
 
 CURRENT_DIR=$(pwd)
 
 # Run nativefier
-eval npx env --prefix /opt/system/lib/nativefier nativefier --disable-context-menu --disable-dev-tools --ignore-certificate -n "$NAME" -u firefox $CSS_INJECT_FLAG $BLOCK_EXTERNAL_LINKS_FLAG $URL_INTERNAL_FLAG $ICON_FLAG $SINGLE_INSTANCE_FLAG $TRAY_FLAG "$URL"
+cd ~/.local/share/apps/nativefier
+npx nativefier --disable-context-menu --disable-dev-tools --ignore-certificate -n "$NAME" -u firefox $CSS_INJECT_FLAG $BLOCK_EXTERNAL_LINKS_FLAG $URL_INTERNAL_FLAG $ICON_FLAG $SINGLE_INSTANCE_FLAG $TRAY_FLAG "$URL"
+mkdir -p $PWA_DIR
+mv ~/.local/share/apps/nativefier/$NAME-linux-x64 ~/.local/share/PWA/$NAME-linux-x64
 
-# Run dli.py
-eval /usr/bin/dli.py -n "$NAME" -e "$DLI_E" -c "$DESCRIPTION" -i "$ICON" $SYSTEM_FLAG
+# Run depender
+depender -n "$NAME" -e "$DLI_E" -c "$DESCRIPTION" -i "$ICON" $SYSTEM_FLAG
 
 cd "$CURRENT_DIR"
