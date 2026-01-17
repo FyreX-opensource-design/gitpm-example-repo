@@ -9,10 +9,11 @@
       ],
       "Arch": {
         "node": "nodejs",
-        "npm": "npm",
+        "npm": "npm"
       },
     "gitpm": [
       "https://github.com/FyreX-opensource-design/Depender,Nathan22211-gitpm-test,depender"
     ]
   }
+}
 }
