@@ -135,11 +135,11 @@ fi
 if [ "$SYSTEM" = "system" ]; then
     SYSTEM_FLAG="--system"
     PWA_DIR="/opt/PWA"
-    DLI_E="/opt/PWA/$NAME-linux-x64/APP"
+    DLI_E="/opt/PWA/$NAME-linux-x64/$NAME"
 else
     SYSTEM_FLAG=""
     PWA_DIR="$HOME/.local/share/PWA"
-    DLI_E="$HOME/.local/share/PWA/$NAME-linux-x64/APP"
+    DLI_E="$HOME/.local/share/PWA/$NAME-linux-x64/$NAME"
 fi
 
 CURRENT_DIR=$(pwd)
@@ -155,6 +155,6 @@ DEPENDER_ARGS=(-n "$NAME" -e "$DLI_E" -c "$DESCRIPTION" -i "$ICON")
 if [ -n "$SYSTEM_FLAG" ]; then
     DEPENDER_ARGS+=("$SYSTEM_FLAG")
 fi
-depender "${DEPENDER_ARGS[@]}"
+depender app create "${DEPENDER_ARGS[@]}"
 
 cd "$CURRENT_DIR"
