@@ -4,10 +4,10 @@
     "system": {
       "Arch_method": "sudo pacman -S --noconfirm",
       "check_commands": [
-        "cgcreate "
+        "cgcreate"
       ],
       "Arch": {
-        "cgcreate": "libcgroup",
+        "cgcreate": "libcgroup"
       }
     }
   }
