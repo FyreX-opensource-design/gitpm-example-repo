@@ -1,0 +1,14 @@
+{
+  "system_only": true,
+  "dependencies": {
+    "system": {
+      "Arch_method": "sudo pacman -S --noconfirm",
+      "check_commands": [
+        "gum"
+      ],
+      "Arch": {
+        "gum": "gum"
+      }
+  }
+}
+}
